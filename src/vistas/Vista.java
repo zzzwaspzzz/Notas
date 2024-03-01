@@ -27,7 +27,8 @@ public class Vista {
         Alumno a = new Alumno();
 
         a.setNombre(v.pideNombre());
-
+        
+        return a;
     }
 
     private int muestraMenu() {
@@ -60,6 +61,7 @@ public class Vista {
             } else
             {
                 correcto = false;
+                System.out.println("Inserte solo numeros, por favor. ");
             }
 
         } while (!correcto);
@@ -82,14 +84,19 @@ public class Vista {
         do{
             Scanner sc = new Scanner(System.in);
             texto = sc.nextLine();
-            if (texto.matches("[a-zA-Z]"))
+            if (esTexto(texto))
             {
               correcto = true;  
             }else{
                 correcto = false;
+                System.out.println("Inserte solo letras, por favor. ");
             }
         } while (!correcto);
         return texto;
+    }
+
+    private boolean esTexto(String texto) {
+        return texto != null && texto.matches("[a-zA-Z]");
     }
 
 }
