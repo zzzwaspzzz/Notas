@@ -20,19 +20,7 @@ public class Vista {
         n = v.muestraMenu();
         return n;
     }
-
-    public Alumno pideAlumno() {
-        Vista v = new Vista();
-
-        Alumno a = new Alumno();
-
-        a.setNombre(v.pideNombre());
-        
-        a.setApellidos(v.pideApellidos());
-        
-        return a;
-    }
-
+    
     private int muestraMenu() {
         Vista v = new Vista();
         int n = -99;
@@ -45,17 +33,15 @@ public class Vista {
         System.out.println("*********************************************");
         System.out.println("* 0. Salir.                                 *");
         System.out.println("*********************************************");
+        System.out.println("\n\nIntroduzca numero de opcion -> ");
         return n = v.pideNumero();
     }
-
+       
     private int pideNumero() {
         String numero = "";
         boolean correcto = false;
-        Scanner sc = new Scanner(System.in);
-
-        do
-        {
-            System.out.println("Introduzca numero de opcion -> ");
+        do{
+            Scanner sc = new Scanner(System.in);
             numero = sc.nextLine();
             if (esNumerico(numero))
             {
@@ -65,19 +51,8 @@ public class Vista {
                 correcto = false;
                 System.out.println("Inserte solo numeros, por favor. ");
             }
-
         } while (!correcto);
         return Integer.parseInt(numero);
-    }
-
-    private boolean esNumerico(String numero) {
-        return numero != null && numero.matches("[-+]?\\d*\\.?\\d+");
-    }
-
-    private String pideNombre() {
-        Vista v = new Vista();
-        System.out.println("Nombre de alumno -> ");
-        return v.pideTexto();
     }
 
     private String pideTexto() {
@@ -96,9 +71,31 @@ public class Vista {
         } while (!correcto);
         return texto;
     }
-
+    
+    private boolean esNumerico(String numero) {
+        return numero != null && numero.matches("[-+]?\\d*\\.?\\d+");
+    }
+    
     private boolean esTexto(String texto) {
         return texto != null && texto.matches("[a-zA-Z]");
+    }
+    
+    public Alumno pideAlumno() {
+        Vista v = new Vista();
+
+        Alumno a = new Alumno();
+
+        a.setNombre(v.pideNombre());
+        
+        a.setApellidos(v.pideApellidos());
+        
+        return a;
+    }   
+
+    private String pideNombre() {
+        Vista v = new Vista();
+        System.out.println("Nombre de alumno -> ");
+        return v.pideTexto();
     }
 
     private String pideApellidos() {
