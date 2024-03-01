@@ -17,49 +17,52 @@ public class Vista {
     public int pideOpcion() {
         Vista v = new Vista();
         int n = 0;
-        n=v.muestraMenu();
+        n = v.muestraMenu();
         return n;
     }
 
     public Alumno pideAlumno() {
         Vista v = new Vista();
-        
+
         Alumno a = new Alumno();
-        
+
         a.setNombre(v.pideNombre());
-        
+
     }
 
     private int muestraMenu() {
         Vista v = new Vista();
         int n = -99;
-            System.out.println("*********************************************");
-            System.out.println("* 5. Mostrar asignaturas y notas de alumno. *");
-            System.out.println("* 4. Mostrar alumnos por asignatura.        *");
-            System.out.println("* 3. Modificar móvil de alumno.             *");
-            System.out.println("* 2. Borra alumno.                          *");
-            System.out.println("* 1. Inserta alumno.                        *");
-            System.out.println("*********************************************");
-            System.out.println("* 0. Salir.                                 *");
-            System.out.println("*********************************************");
-            return n = v.pideNumero();       
+        System.out.println("*********************************************");
+        System.out.println("* 5. Mostrar asignaturas y notas de alumno. *");
+        System.out.println("* 4. Mostrar alumnos por asignatura.        *");
+        System.out.println("* 3. Modificar móvil de alumno.             *");
+        System.out.println("* 2. Borra alumno.                          *");
+        System.out.println("* 1. Inserta alumno.                        *");
+        System.out.println("*********************************************");
+        System.out.println("* 0. Salir.                                 *");
+        System.out.println("*********************************************");
+        return n = v.pideNumero();
     }
 
     private int pideNumero() {
         String numero = "";
         boolean correcto = false;
         Scanner sc = new Scanner(System.in);
-        
-        do{
+
+        do
+        {
             System.out.println("Introduzca numero de opcion -> ");
             numero = sc.nextLine();
-            if(esNumerico(numero)){
+            if (esNumerico(numero))
+            {
                 correcto = true;
-            }else{
+            } else
+            {
                 correcto = false;
             }
-            
-        }while(!correcto);
+
+        } while (!correcto);
         return Integer.parseInt(numero);
     }
 
@@ -68,14 +71,25 @@ public class Vista {
     }
 
     private String pideNombre() {
-        Vista v = new Vista();        
+        Vista v = new Vista();
         System.out.println("Nombre de alumno -> ");
         return v.pideTexto();
     }
 
     private String pideTexto() {
-        
+        boolean correcto = false;
+        String texto = "";
+        do{
+            Scanner sc = new Scanner(System.in);
+            texto = sc.nextLine();
+            if (texto.matches("[a-zA-Z]"))
+            {
+              correcto = true;  
+            }else{
+                correcto = false;
+            }
+        } while (!correcto);
+        return texto;
     }
-    
-    
+
 }
