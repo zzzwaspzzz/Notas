@@ -22,7 +22,8 @@ public class Vista {
     }
 
     public Alumno pideAlumno() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Alumno a = new Alumno();
+        
     }
 
     private int muestraMenu() {
