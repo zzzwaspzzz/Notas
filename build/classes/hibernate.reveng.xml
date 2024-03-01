@@ -41,8 +41,8 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="notas"/>
-  <table-filter match-name="alumno"/>
+  <table-filter match-name="telefonos"/>
   <table-filter match-name="notas"/>
   <table-filter match-name="asignatura"/>
-  <table-filter match-name="telefonos"/>
+  <table-filter match-name="alumno"/>
 </hibernate-reverse-engineering>

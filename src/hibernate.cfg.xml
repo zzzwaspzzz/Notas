@@ -50,5 +50,4 @@ Contributor(s):
     <mapping resource="pojos/Notas.hbm.xml"/>
     <mapping resource="pojos/Asignatura.hbm.xml"/>
   </session-factory>
-  <session-factory/>
 </hibernate-configuration>

@@ -28,6 +28,8 @@ public class Vista {
 
         a.setNombre(v.pideNombre());
         
+        a.setApellidos(v.pideApellidos());
+        
         return a;
     }
 
@@ -97,6 +99,12 @@ public class Vista {
 
     private boolean esTexto(String texto) {
         return texto != null && texto.matches("[a-zA-Z]");
+    }
+
+    private String pideApellidos() {
+        Vista v = new Vista();
+        System.out.println("Apellidos del alumno -> ");
+        return v.pideTexto();
     }
 
 }
