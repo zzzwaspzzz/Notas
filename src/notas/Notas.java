@@ -5,6 +5,7 @@
  */
 package notas;
 
+import modelo.AlumnoDAO;
 import pojos.Alumno;
 import vistas.Vista;
 
@@ -47,8 +48,10 @@ public class Notas {
 
     private void insertarAlumno() {
         Vista v = new Vista();
+        AlumnoDAO aDAO = new AlumnoDAO();
         
         Alumno a = v.pideAlumno();
+        aDAO.guardaAlumno(a);
     }
 
     private void borrarAlumno() {
