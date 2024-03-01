@@ -22,19 +22,26 @@ public class Vista {
     }
 
     public Alumno pideAlumno() {
+        Vista v = new Vista();
+        
         Alumno a = new Alumno();
+        
+        a.setNombre(v.pideNombre());
         
     }
 
     private int muestraMenu() {
         Vista v = new Vista();
         int n = -99;
-        
-            System.out.println("1. Mostrar asignaturas y notas de alumno. ");
-            System.out.println("1. Mostrar alumnos por asignatura. ");
-            System.out.println("1. Modificar móvil de alumno. ");
-            System.out.println("2. Borra alumno. ");
-            System.out.println("1. Inserta alumno. ");
+            System.out.println("*********************************************");
+            System.out.println("* 5. Mostrar asignaturas y notas de alumno. *");
+            System.out.println("* 4. Mostrar alumnos por asignatura.        *");
+            System.out.println("* 3. Modificar móvil de alumno.             *");
+            System.out.println("* 2. Borra alumno.                          *");
+            System.out.println("* 1. Inserta alumno.                        *");
+            System.out.println("*********************************************");
+            System.out.println("* 0. Salir.                                 *");
+            System.out.println("*********************************************");
             return n = v.pideNumero();       
     }
 
@@ -58,6 +65,16 @@ public class Vista {
 
     private boolean esNumerico(String numero) {
         return numero != null && numero.matches("[-+]?\\d*\\.?\\d+");
+    }
+
+    private String pideNombre() {
+        Vista v = new Vista();        
+        System.out.println("Nombre de alumno -> ");
+        return v.pideTexto();
+    }
+
+    private String pideTexto() {
+        
     }
     
     
